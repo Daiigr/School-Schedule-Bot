@@ -28,4 +28,4 @@ buildNumber.properties
 .vscode/
 
 #Bot Config Files
-.properties
+*.properties
