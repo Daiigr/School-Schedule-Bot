@@ -3,6 +3,7 @@ import java.io.*;
 
 public class ScheduleHandler {
     String fileString = "timedevents.schedule";
+    String Output = "";
 
     public ScheduleHandler() throws IOException{
         
@@ -13,12 +14,14 @@ public class ScheduleHandler {
 
         FileReader fr = new FileReader(fileString);
         int i;    
-        while((i=fr.read())!=-1)    
-        System.out.print((char)i);    
-        fr.close();    
-        
-
+        while((i=fr.read())!=-1){
+            Output += (char)i;  
+        }
+        fr.close();
+        Output = Output.replace("\r\n", "").replace("\n", "");
+        System.out.println(Output);
     }
+    
 
    
     
