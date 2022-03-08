@@ -3,7 +3,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ScheduleHandler {
-    private String FileName;
+    private String FileNameTimedEvent;
+    private String FileNameEventData;
 
     String Output = "";
     String Day[];
@@ -12,20 +13,24 @@ public class ScheduleHandler {
     int TimedEventData[];
 
     public ArrayList<ArrayList<TimedEvent>> TimedEventArray;
-    ArrayList<TimedEvent> Temp;
+    public ArrayList<ArrayList<EventData>> EventDataArray;
+    ArrayList<Object> Temp;
+
+ //
 
 
-    public ScheduleHandler(String FileName) throws Exception{
+    public ScheduleHandler(String FileNameTimedEvent, String FileNameEventData) throws Exception{
+
+        this.FileNameTimedEvent = FileNameTimedEvent;
+        this.FileNameEventData = FileNameEventData;
 
         TimedEventArray = new ArrayList<ArrayList<TimedEvent>>();
 
-
-        this.FileName = FileName;
-        File f = new File( FileName);
+        File f = new File( FileNameTimedEvent);
         if(!f.exists()){
             f.createNewFile();
         }
-        FileReader fr = new FileReader(FileName);
+        FileReader fr = new FileReader(FileNameTimedEvent);
         int i;    
         while((i=fr.read())!=-1){
             Output += (char)i;  
@@ -69,6 +74,10 @@ public class ScheduleHandler {
 
 
         }
+
+
+
+
   
     }
 

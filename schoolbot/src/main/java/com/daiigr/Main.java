@@ -15,7 +15,7 @@ public class Main {
         public static void main(String[] args) throws Exception{
                Config config = new Config("bot.properties");
           // setJda(JDABuilder.createDefault(config.getToken()).build());
-            ScheduleHandler sh = new ScheduleHandler("timedevents.schedule");
+            ScheduleHandler sh = new ScheduleHandler("timedevents.schedule", "EventData.data");
 
 
             
